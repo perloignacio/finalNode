@@ -11,7 +11,7 @@ const passport=require("passport");
 
 const handlebars=require("express-handlebars");
 const app = express();
-const PORT = process.env.PUERTO || 80;
+const PORT = 80;
 const path =require('path');
 const cookieParser=require("cookie-parser");
 const fileUpload =require('express-fileupload');
