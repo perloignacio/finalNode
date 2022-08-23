@@ -1,0 +1,82 @@
+<div class="col-md-8 offset-md-2">
+    <div class="row">
+        <div class="col-md-8 mt-5">
+            {{#if prod}}
+            <H2>ACTUALIZAR DATOS</H2>
+            {{else}}
+            <H2>NUEVO PRODUCTO</H2>
+            {{/if}}
+        </div>
+        <div class="col-md-4 text-right">
+           
+             <a href="/admin" class="btn btn-primary">VOLVER</a>
+            
+            
+        </div>
+    </div>
+    
+    <div class="contentform card shadow p-5">
+        {{#if prod}}
+        <form id="frmlogin" method="post" action="../../productos/actualiza/{{prod._id}}" name="frmlogin" enctype="multipart/form-data">
+        {{else}}
+        <form id="frmlogin" method="post" action="../productos/registra" name="frmlogin" enctype="multipart/form-data">
+        {{/if}}
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="nombre" class="form-label">Nombre:</label>
+                        <input class="form-control" type="text" id="nombre" name="nombre" value="{{prod.nombre}}" autofocus />
+                        <div class="invalid-feedback"></div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="descripcion" class="form-label">Descripcion:</label>
+                        <textarea class="form-control" id="descripcion" name="descripcion">{{prod.descripcion}}</textarea>
+                        <div class="invalid-feedback"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="codigo" class="form-label">Codigo:</label>
+                        <input class="form-control" type="text" id="codigo"name="codigo"   value="{{prod.codigo}}"/>
+                        <div class="invalid-feedback"></div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="precio" class="form-label">Precio:</label>
+                        <input class="form-control" type="number" id="precio"name="precio"   value="{{prod.precio}}"/>
+                        <div class="invalid-feedback"></div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="stock" class="form-label">Stock:</label>
+                        <input class="form-control" type="number" id="stock"name="stock"   value="{{prod.stock}}"/>
+                        <div class="invalid-feedback"></div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="foto" class="form-label">Url Foto:</label>
+                        <input class="form-control" type="tel" id="foto"name="foto"   value="{{prod.foto}}"/>
+                        <div class="invalid-feedback"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-12">
+                    <input type="submit" class="btn btn-primary mt-3" value="Enviar">
+                </div>
+            </div>
+            
+        
+        </form>
+    </div>
+    
+</div>

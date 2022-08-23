@@ -1,0 +1,64 @@
+{{#if ordenes}}
+<div class="row ">
+        {{#each ordenes}}
+            <div class="col-md-12 ">
+                <div class="card mb-5">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-md-4">
+                                Orden Nro:<b>{{this._doc._id}}</b>
+                            </div>
+                            <div class="col-md-4">
+                                Estado:<b>{{this._doc.estado}}</b>
+                            </div>
+                            <div class="col-md-4">
+                                Fecha:<b>{{this.fecha}}</b>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        {{#each this.prod}}
+                        <div class="item producto prod">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="foto">
+                                        <img src="{{this.prod.foto}}">
+                                    </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <h4>{{this.prod.nombre}}</h4>
+                                    <p>{{this.prod.descripcion}}</p>
+                                    
+                                        
+                                        
+                                    
+                                </div>
+                                <div class="col-md-2">
+                                    {{this.cant}}
+                                </div>
+                                <div class="col-md-2 text-right">
+                                    <h3>$ {{this.prod.precio}}</h3>
+                                </div>
+                            </div>
+                        
+                        </div>
+                        {{/each}}
+                    </div>
+                    <div class="card-footer">
+                        <div class="row">
+                            <div class="col-12 text-right">
+                                TOTAL:<b>$ {{this.total}}</b>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+{{else}}
+<div class="row">
+    <div class="col-md-12 text-center">
+        <h2>NO EXISTEN ORDENES DE COMPRAS</h2>
+    </div>
+</div>
+{{/if}}

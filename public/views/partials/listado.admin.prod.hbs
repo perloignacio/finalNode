@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-md-12">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Foto</th>
+                <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each productos}}
+                <tr>
+                <td>{{this._id}}</td>
+                <td>{{this.nombre}}</td>
+                <td>$ {{this.precio}}</td>
+                <td><img src='{{this.foto}}' width="50"></td>
+                <td><button onclick="borrarProd('{{this._id}}')" class="btn btn-danger">Borrar</button> <a href="/admin/producto/{{this._id}}" class="btn btn-primary">Editar</button></td>
+                
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>

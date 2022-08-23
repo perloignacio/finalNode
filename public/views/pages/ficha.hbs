@@ -1,0 +1,32 @@
+
+<div class="listadoproductos">
+    
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card producto">
+                <div class="foto">
+                    <img src="{{prod.foto}}">
+                </div>
+                <div class="info">
+                    <h4>{{prod.nombre}}</h4>
+                    <p>{{prod.descripcion}}</p>
+                    <h3>${{prod.precio}}</h3>
+                    
+                    <div class="precio">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="number" name="cantidad" id="cantidad_{{prod._id}}" class="form-control" value="1">
+                            </div>
+                            <div class="col-md-6">
+                                <button class="btn btn-primary" onclick="agregarAlCarrito('{{prod._id}}')" type="button">COMPRAR</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+</div>

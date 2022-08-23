@@ -1,0 +1,39 @@
+{{#if items}}
+<div class="row">
+        {{#each items}}
+            <div class="col-md-12">
+                <div class="item producto prod">
+                    <input type="hidden" name="idproducto" id="idproducto" value="{{this.producto._id}}">
+                    <div class="row">
+                        <div class="col-md-3">
+                             <div class="foto">
+                                <img src="{{this.producto.foto}}">
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <h4>{{this.producto.nombre}}</h4>
+                            <p>{{this.producto.descripcion}}</p>
+                            
+                                
+                                <button type="button" onclick="quitarItem('{{this.producto._id}}')" class="btn btn-danger">QUITAR</button>
+                            
+                        </div>
+                        <div class="col-md-2">
+                            <h2><input type="number" class="form-control" name="cant" id="cant" value="{{this.cantidad}}"></h2>
+                        </div>
+                        <div class="col-md-2 text-right">
+                            <h3>$ {{this.producto.precio}}</h3>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+        {{/each}}
+    </div>
+{{else}}
+<div class="row">
+    <div class="col-md-12 text-center">
+        <h2>NO EXISTEN PRODUCTOS EN SU CARRITO DE COMPRAS</h2>
+    </div>
+</div>
+{{/if}}

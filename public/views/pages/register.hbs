@@ -1,0 +1,107 @@
+<div class="col-md-8 offset-md-2">
+    <div class="row">
+        <div class="col-md-8 mt-5">
+            {{#if userLogged}}
+            <H2>ACTUALIZAR DATOS</H2>
+            {{else}}
+            <H2>REGISTRO DE USUARIO</H2>
+            {{/if}}
+        </div>
+        <div class="col-md-4 text-right">
+            {{#if userLogged}}
+             <a href="/" class="btn btn-primary">VOLVER</a>
+            {{else}}
+            <a href="/login" class="btn btn-primary">LOGIN</a>
+            {{/if}}
+            
+        </div>
+    </div>
+    
+    <div class="contentform card shadow p-5">
+        {{#if userLogged}}
+        <form id="frmlogin" method="post" action="perfil" name="frmlogin" enctype="multipart/form-data">
+        {{else}}
+        <form id="frmlogin" method="post" action="registro" name="frmlogin" enctype="multipart/form-data">
+        {{/if}}
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="nombre" class="form-label">Ingrese su nombre:</label>
+                        <input class="form-control" type="text" id="nombre" name="nombre" value="{{userLogged.nombre}}" autofocus />
+                        <div class="invalid-feedback"></div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="email" class="form-label">Ingrese su email:</label>
+                        <input class="form-control" type="text" id="email" name="email"  value="{{userLogged.email}}"/>
+                        <div class="invalid-feedback"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="direccion" class="form-label">Ingrese su dirección:</label>
+                        <input class="form-control" type="text" id="direccion"name="direccion"   value="{{userLogged.direccion}}"/>
+                        <div class="invalid-feedback"></div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="edad" class="form-label">Ingrese su edad:</label>
+                        <input class="form-control" type="number" id="edad"name="edad"   value="{{userLogged.edad}}"/>
+                        <div class="invalid-feedback"></div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="telefono" class="form-label">Ingrese su teléfono:</label>
+                        <input class="form-control" type="tel" id="telefono"name="telefono"   value="{{userLogged.telefono}}"/>
+                        <div class="invalid-feedback"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                     {{#if userLogged}}
+                    <div class="form-group">
+                        <label for="profileImage" class="form-label">Contraseña deje en blanco si no quiere cambiar:</label>
+                        <input type="password" class="form-control" id="contra" name="contra">
+                    </div>
+                    {{else}}
+                    <div class="form-group">
+                        <label for="profileImage" class="form-label">Ingrese su contraseña:</label>
+                        <input type="password" class="form-control" id="contra" name="contra">
+                    </div>
+                    {{/if}}
+                </div>
+                <div class="col-md-12">
+                    {{#if userLogged}}
+                    <img src="uploads/{{userLogged.profile}}" width="100">
+                    <div class="form-group">
+                        <label for="profileImage" class="form-label">Actualizar imagen de perfil:</label>
+                        <input class="form-control" type="file" id="profileImage" name="profileImage" />
+                        <div class="invalid-feedback"></div>
+                    </div>
+                    {{else}}
+                    <div class="form-group">
+                        <label for="profileImage" class="form-label">Seleccione una imagen para su perfil:</label>
+                        <input class="form-control" type="file" id="profileImage" name="profileImage" />
+                        <div class="invalid-feedback"></div>
+                    </div>
+                    {{/if}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <input type="submit" class="btn btn-primary mt-3" value="Enviar">
+                </div>
+            </div>
+            
+        
+        </form>
+    </div>
+    
+</div>

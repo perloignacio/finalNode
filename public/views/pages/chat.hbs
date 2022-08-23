@@ -1,0 +1,21 @@
+
+<div class="col-md-8 offset-md-2 mt-5">
+    <div class="listaMensajes card" id="listaMensajes">
+
+    </div>
+    <div class="formMensajes mt-3">
+        <form id="frmMensajes" name="frmMensajes">
+            <div class="row">
+                <div class="col-12">
+                    <input type="text" class="form-control mt-3" id="autor" value="{{userLogged.email}}" disabled placeholder="email" name="autor">
+                </div>
+                <div class="col-12">
+                    <textarea class="form-control mt-3" id="mensaje" name="mensaje" placeholder="Mensaje"></textarea>
+                </div>
+                <div class="col-12">
+                    <input type="submit" class="btn btn-primary mt-3" value="Enviar">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

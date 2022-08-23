@@ -1,0 +1,29 @@
+
+<div class="row">
+{{#each productos}}
+    <div class="col-md-3">
+        <div class="card producto">
+            <div class="foto">
+                <a href="flow/{{this._id}}"><img src="{{this.foto}}"></a>
+            </div>
+            <div class="info">
+                <h4>{{this.nombre}}</h4>
+                <p>{{this.descripcion}}</p>
+                <h3>${{this.precio}}</h3>
+                   
+                    <div class="precio">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="number" name="cantidad" id="cantidad_{{this._id}}" class="form-control" value="1">
+                            </div>
+                            <div class="col-md-6">
+                                <button class="btn btn-primary" onclick="agregarAlCarrito('{{this._id}}')" type="button">COMPRAR</button>
+                            </div>
+                        </div>
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+{{/each}}
+</div>
